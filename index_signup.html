@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Makers - Energize your spirit, empower your journey..</title>
+    <link rel="icon" type="image/x-icon" href="bg.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <style>
+        body {
+            background-color: black;
+            color: aliceblue;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            max-width: 2000px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            width: 80%;
+        }
+        .right-side {
+            flex: 1;
+            padding: 40px;
+            background: #1c1c1c;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .logo {
+            font-family: 'Dancing Script', cursive;
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .form-floating {
+            margin-bottom: 13px;
+            padding: 6px;
+        }
+        .btn-login {
+            background-color: gray;
+            color: black;
+            font-weight: bold;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            border: none;
+        }
+        .btn-google {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: transparent;
+            border: 1px solid white;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+        }
+        .btn-google img {
+            width: 20px;
+            height: 20px;
+        }
+        .extra-links {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        .extra-links a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .left-side {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            
+        }
+        .bg-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            
+
+        }
+        .form-control {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .error-message {
+            color: red;
+            font-size: 12px;
+            display: block;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+        
+        /* Success message styling */
+        .success-message {
+            color: green;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-side">
+            <img src="login_bg.jpg" alt="Background Image" class="bg-image">
+
+        </div>
+        <div class="right-side">
+            <div class="logo">Cafe Makers</div>
+            <h4>Welcome, Please create your account.</h4>
+        
+            <form id="signupForm">
+                <label for="floatingName">Full Name</label>
+                <input type="text" class="form-control" id="floatingName" placeholder="Enter your full name">
+                <small class="error-message" id="nameError"></small>
+                <label for="floatingInput">Email Address</label>
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <small class="error-message" id="emailError"></small>
+                <label for="floatingPhone">Phone Number</label>
+                <input type="tel" class="form-control" id="floatingPhone" placeholder="Enter your phone number">
+                <small class="error-message" id="phoneError"></small>
+                <label for="floatingPassword">Password</label>
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Enter password">
+                <small class="error-message" id="passwordError"></small>
+                <label for="floatingRePassword">Re-enter Password</label>
+                <input type="password" class="form-control" id="floatingRePassword" placeholder="Re-enter password">
+                <small class="error-message" id="repasswordError"></small>
+                <button type="submit" class="btn-login">Sign Up</button>
+            </form>
+            <p id="successMessage" class="success-message"></p>
+        
+            <p class="mt-3">Or</p>
+            <button class="btn-google" onclick="window.location.href='index_home.html';">
+                <img src="Google.jpeg" alt="Google Logo">
+                Sign in with Google
+            </button>
+            <p class="extra-links mt-3">
+                Existing Customer? <a href="index_login.html">Login</a>
+            </p>
+        </div>
+        
+        <script>
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+        
+            let name = document.getElementById("floatingName").value.trim();
+            let email = document.getElementById("floatingInput").value.trim();
+            let phone = document.getElementById("floatingPhone").value.trim();
+            let password = document.getElementById("floatingPassword").value;
+            let repassword = document.getElementById("floatingRePassword").value;
+        
+            let nameError = document.getElementById("nameError");
+            let emailError = document.getElementById("emailError");
+            let phoneError = document.getElementById("phoneError");
+            let passwordError = document.getElementById("passwordError");
+            let repasswordError = document.getElementById("repasswordError");
+            let successMessage = document.getElementById("successMessage");
+        
+            let valid = true;
+            nameError.textContent = "";
+            emailError.textContent = "";
+            phoneError.textContent = "";
+            passwordError.textContent = "";
+            repasswordError.textContent = "";
+            successMessage.textContent = "";
+            if (name.length < 3) {
+                nameError.textContent = "Name must be at least 3 characters.";
+                valid = false;
+            }
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                emailError.textContent = "Enter a valid email address.";
+                valid = false;
+            }
+            let phonePattern = /^[0-9]{10}$/;
+            if (!phonePattern.test(phone)) {
+                phoneError.textContent = "Enter a valid 10-digit phone number.";
+                valid = false;
+            }
+            if (password.length < 6) {
+                passwordError.textContent = "Password must be at least 6 characters.";
+                valid = false;
+            }
+            if (repassword !== password) {
+                repasswordError.textContent = "Passwords do not match.";
+                valid = false;
+            }
+            if (valid) {
+                successMessage.textContent = "✅ Successfully created your account!";
+                successMessage.style.color = "green";
+        
+                setTimeout(() => {
+                    window.location.href = "index_home.html";
+                }, 2000);
+            }
+        });
+        </script>
+</body>
+</html>

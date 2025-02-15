@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Makers - Energize your spirit, empower your journey..</title>
+    <link rel="icon" type="image/x-icon" href="bg.png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Coffee Makers - Energize your spirit, empower your journey..</title>
+    <link rel="icon" type="image/x-icon" href="bg.png">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        .txt {
+            font-family: 'Dancing Script', cursive;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .txt-price {
+            font-family: 'Dancing Script', cursive;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <h1 class="text-center mb-4 txt" style="font-family: 'Dancing Script', cursive; font-size: 50px;">Our Coffee Menu</h1>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <script>
+                const coffeeList = [
+                    { name: "Espresso", price: "$3", img: "item2.jpg" },
+                    { name: "Cappuccino", price: "$4", img: "item1.jpg" },
+                    { name: "Latte", price: "$4.50", img: "item3.jpg" },
+                    { name: "Mocha", price: "$5", img: "item4.jpg" },
+                    { name: "Americano", price: "$3.50", img: "item5.jpg" },
+                    { name: "Macchiato", price: "$4", img: "item6.jpg" },
+                    { name: "Irish Coffee", price: "$6", img: "item7.jpg" },
+                    { name: "Affogato", price: "$5", img: "item8.jpg" },
+                    { name: "Turkish Coffee", price: "$4.50", img: "item9.jpg" },
+                    { name: "Cold Brew", price: "$5", img: "item11.jpg" },
+                    { name: "Iced Coffee", price: "$4.50", img: "item10.jpg" },
+                    { name: "Vietnamese Coffee", price: "$5", img: "item12.jpg" }
+                ];
+                document.write(coffeeList.map(coffee => `
+                    <div class="col">
+                        <div class="card">
+                            <img src="${coffee.img}" class="card-img-top" alt="${coffee.name}">
+                            <div class="card-body text-center">
+                                <h5 class="card-title txt">${coffee.name}</h5>
+                                <p class="card-text txt-price">Price: <b>${coffee.price}</b></p>
+                                <a href="index_order.html" class="btn btn-primary txt-price">Order</a>
+                            </div>
+                        </div>
+                    </div>
+                `).join(''));
+            </script>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Makers - Energize your spirit, empower your journey..</title>
+    <link rel="icon" type="image/x-icon" href="bg.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    
+    <style>
+        .navbar-brand {
+            font-family: 'Dancing Script', cursive;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .txt {
+            font-family: 'Dancing Script', cursive;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .btn-txt {
+            font-family: 'Dancing Script', cursive;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .carousel-item img, .carousel-item video {
+            width: 100%;
+            height: 710px;
+            object-fit: cover;
+            border-radius: 1px;
+        }
+        #making-process {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .position-relative {
+            margin-top: 0;
+            padding-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Cafe Makers</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="index_menu.html">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index_login.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="making-process">
+        <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <video autoplay muted loop>
+                        <source src="cm1.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+    </section>
+    
+
+    <section class="position-relative text-center">
+        <img src="img.jpg" alt="Delicious Coffee" class="img-fluid w-100" style="max-height: 650px; object-fit: cover; border-radius: 1px;">
+        <div class="position-absolute top-50 start-50 translate-middle text-center">
+            <h3 class="text-white bg-dark bg-opacity-50 px-3 py-2 rounded txt">Want to drink our handmade coffee? Click below to view our menu.</h3>
+            <a href="index_menu.html" class="btn btn-light mt-3 px-4 py-2">
+                <b class="btn-txt">Explore Menu</b>
+            </a>
+        </div>
+    </section>
+
+    <section class="container my-5" id="about">
+      <h1 class="text-center navbar-brand" style="font-size: 50px; font-weight: bold;">About Our Company</h1>
+      <p class="text-start w-75 mx-auto mt-3 txt">
+        Cafe Makers is a cozy and vibrant coffee shop dedicated to serving high-quality, freshly brewed coffee and delicious pastries. Our mission is to create a welcoming space where coffee lovers can relax, work, or connect with friends over a perfect cup of coffee.
+
+        At Cafe Makers, we believe that great coffee starts with the finest beans, carefully sourced from the best coffee-growing regions around the world. Our expert baristas craft each cup with precision, ensuring a rich aroma, bold flavors, and the perfect balance of taste in every sip. Whether you prefer a classic espresso, a creamy latte, or an indulgent mocha, we have something to satisfy every coffee lover.
+        
+        But we’re more than just coffee! Our selection of freshly baked pastries, sandwiches, and desserts complements our beverages perfectly, making Cafe Makers a go-to spot for a delightful breakfast, a mid-day break, or a casual evening treat.
+        
+        With a warm and inviting ambiance, free Wi-Fi, and cozy seating, Cafe Makers is not just a café—it’s an experience. Whether you’re looking for a quiet corner to work, a friendly place to catch up with loved ones, or simply a comforting escape from the hustle and bustle, we are here to make every visit special.
+        
+        Join us at Cafe Makers and indulge in the ultimate coffee experience—one sip at a time!
+      </p>
+  </section>
+
+  <section class="container my-5" id="contact">
+    <h1 class="text-center navbar-brand" style="font-size: 50px; font-weight: bold;">Contact Us</h1>
+    
+    <div class="row mt-4">
+        <div class="col-md-6 text-center">
+            <img src="map.jpg" alt="Cafe Makers Location" class="img-fluid rounded shadow">
+        </div>
+        <div class="col-md-6 text-center txt" style="padding-top: 10%;">
+            <h4><b>Get in Touch</b></h4>
+            <p><b>📍 Address:</b> 123 Coffee Street, Cityville, Country</p>
+            <p><b>📞 Phone:</b> +123 456 7890</p>
+            <p><b>✉️ Email:</b> contact@cafemakers.com</p>
+            <p>We’d love to hear from you! Whether you have questions, feedback, or just want to say hello, feel free to reach out to us.</p>
+        </div>
+    </div>
+</section>
+</body>
+</html>
